@@ -1,9 +1,6 @@
 package ma.enset.tp2_ormjpahibernatespringdata.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,7 +10,7 @@ import java.util.Date;
 
 
 @Entity
-@Data @NoArgsConstructor @AllArgsConstructor @Builder
+@Data
 public class JPAPatient {
      @Id @GeneratedValue(strategy = GenerationType.IDENTITY) //Marks the primary key
     private Long id;
@@ -22,4 +19,14 @@ public class JPAPatient {
     private Boolean malade;
     private int score;
 
+    public JPAPatient(Long id, String nom, Date dateNaissance, Boolean malade, int score) {
+        this.score = score;
+        this.malade = malade;
+        this.dateNaissance = dateNaissance;
+        this.nom = nom;
+        this.id = id;
+    }
+
+    public JPAPatient() {
+    }
 }

@@ -7,10 +7,14 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.text.SimpleDateFormat;
+
 @SpringBootApplication
 public class Tp2OrmjpaHibernateSpringDataApplication implements CommandLineRunner {
     @Autowired
 	private PatientRepository patientRepository;
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
 	public static void main(String[] args) {
 
 		SpringApplication.run(Tp2OrmjpaHibernateSpringDataApplication.class, args);
@@ -18,6 +22,11 @@ public class Tp2OrmjpaHibernateSpringDataApplication implements CommandLineRunne
 
 	@Override
 	public void run(String... args) throws Exception {
+
+		patientRepository.save(new JPAPatient(null,"aitchrif1",sdf.parse("2004-02-16"),false,16));
+		patientRepository.save(new JPAPatient(null,"aitchrif2",sdf.parse("2004-02-17"),false,17));
+		patientRepository.save(new JPAPatient(null,"aitchrif3",sdf.parse("2004-02-18"),false,18));
+
 
 	}
 }
