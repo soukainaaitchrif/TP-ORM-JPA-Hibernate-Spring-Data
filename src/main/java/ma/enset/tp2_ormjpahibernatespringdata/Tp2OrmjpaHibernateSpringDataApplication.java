@@ -51,5 +51,16 @@ public class Tp2OrmjpaHibernateSpringDataApplication implements CommandLineRunne
 		 patient.setMalade(true);
 		 patientRepository.save(patient);
 		 patient.toString();
+
+		 //Supprimer un patient
+		patientRepository.deleteById(Long.valueOf(2));
+		System.out.println("les patients restants : \n");
+		List<JPAPatient> patientrestant = patientRepository.findAll();
+		patientrestant.forEach(p->{
+					p.toString();
+				}
+
+		);
+
 	}
 }
