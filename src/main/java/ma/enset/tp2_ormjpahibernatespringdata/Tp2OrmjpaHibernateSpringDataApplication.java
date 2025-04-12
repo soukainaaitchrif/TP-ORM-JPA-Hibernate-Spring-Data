@@ -27,11 +27,15 @@ public class Tp2OrmjpaHibernateSpringDataApplication implements CommandLineRunne
 		patientRepository.save(new JPAPatient(null,"aitchrif1",sdf.parse("2004-02-16"),false,16));
 		patientRepository.save(new JPAPatient(null,"aitchrif2",sdf.parse("2004-02-17"),false,17));
 		patientRepository.save(new JPAPatient(null,"aitchrif3",sdf.parse("2004-02-18"),false,18));
+		//consulter tout les patients
         List<JPAPatient> patients = patientRepository.findAll();
         patients.forEach(p->{
 			System.out.println(p.toString());
 				}
 
 		);
+         //consulter un patient
+		JPAPatient patient=patientRepository.findById(Long.valueOf(1)).get();
+		System.out.println("consulter un patient: " + patient.toString());
 	}
 }
