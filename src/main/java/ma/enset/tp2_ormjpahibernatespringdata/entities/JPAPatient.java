@@ -13,6 +13,7 @@ public class JPAPatient {
      @Id @GeneratedValue(strategy = GenerationType.IDENTITY) //Marks the primary key
     private Long id;
     private String nom;
+    @Temporal(TemporalType.TIMESTAMP)  // Remove precision if using older MySQL versions
     private Date dateNaissance;
     private Boolean malade;
     private int score;

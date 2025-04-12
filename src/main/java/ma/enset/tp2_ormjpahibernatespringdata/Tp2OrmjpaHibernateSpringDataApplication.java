@@ -34,6 +34,7 @@ public class Tp2OrmjpaHibernateSpringDataApplication implements CommandLineRunne
 				}
 
 		);
+
          //consulter un patient
 		JPAPatient patient=patientRepository.findById(Long.valueOf(1)).get();
 		System.out.println("consulter un patient: " ) ;
