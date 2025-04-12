@@ -2,6 +2,7 @@ package ma.enset.tp2_ormjpahibernatespringdata.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Setter;
 
 import java.util.Date;
 

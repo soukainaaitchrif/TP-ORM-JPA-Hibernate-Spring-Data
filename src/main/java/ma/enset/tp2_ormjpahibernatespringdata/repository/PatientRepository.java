@@ -8,4 +8,5 @@ import java.util.List;
 public interface PatientRepository extends JpaRepository<JPAPatient,Long> {
     List<JPAPatient> findBynom(String lastName);
 
+
 }

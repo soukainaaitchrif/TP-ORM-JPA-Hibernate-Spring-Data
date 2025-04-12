@@ -47,5 +47,9 @@ public class Tp2OrmjpaHibernateSpringDataApplication implements CommandLineRunne
 
 		);
 
+		//mettre à jour un patient
+		 patient.setMalade(true);
+		 patientRepository.save(patient);
+		 patient.toString();
 	}
 }
