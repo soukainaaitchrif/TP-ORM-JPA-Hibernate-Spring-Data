@@ -1,10 +1,7 @@
 package ma.enset.tp2_ormjpahibernatespringdata.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
@@ -28,5 +25,14 @@ public class JPAPatient {
     }
 
     public JPAPatient() {
+    }
+    public String toString(){
+        System.out.println("Nom: " + nom);
+        System.out.println("Date Naissance: " + dateNaissance);
+        System.out.println("Malade: " + malade);
+        System.out.println("Score: " + score);
+
+
+        return null;
     }
 }

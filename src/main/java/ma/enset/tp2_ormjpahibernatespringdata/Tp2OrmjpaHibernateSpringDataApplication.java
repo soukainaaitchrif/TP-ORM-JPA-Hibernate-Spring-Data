@@ -30,12 +30,22 @@ public class Tp2OrmjpaHibernateSpringDataApplication implements CommandLineRunne
 		//consulter tout les patients
         List<JPAPatient> patients = patientRepository.findAll();
         patients.forEach(p->{
-			System.out.println(p.toString());
+			p.toString();
 				}
 
 		);
          //consulter un patient
 		JPAPatient patient=patientRepository.findById(Long.valueOf(1)).get();
-		System.out.println("consulter un patient: " + patient.toString());
+		System.out.println("consulter un patient: " ) ;
+	    patient.toString();
+
+		// chercher des patients qui ont un score > 16
+		List<JPAPatient> patients2 = patientRepository.findBynom("aitchrif");
+		patients.forEach(p->{
+				p.toString();
+				}
+
+		);
+
 	}
 }
